@@ -61,7 +61,7 @@ Before you begin, make sure you have the following installed:
      ```
 
 2. **Open the directory in your code editor**:
-   ```
+   ```bash
    code .
    ```
 
