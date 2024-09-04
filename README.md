@@ -50,12 +50,12 @@ Before you begin, make sure you have the following installed:
 
 1. **Create and navigate to your project folder**:
    - **Mac/Linux**:
-     ```
+     ```bash
      mkdir ~/YOURDIRECTORY
      cd ~/YOURDIRECTORY
      ```
    - **Windows**:
-     ```
+     ```bash
      mkdir %USERPROFILE%\YOURDIRECTORY
      cd %USERPROFILE%\YOURDIRECTORY
      ```
@@ -74,12 +74,12 @@ Before you begin, make sure you have the following installed:
 ### **Install Node.js**
 
 - **Mac**: Install via Homebrew:
-  ```
+  ```bash
   brew install node
   ```
 
 - **Linux**: Install via apt:
-  ```
+  ```bash
   sudo apt update && sudo apt install nodejs npm
   ```
 
@@ -87,14 +87,14 @@ Before you begin, make sure you have the following installed:
 
 > **Verify Node.js installation**:  
 Run the following command to ensure Node.js is installed:
-```
+```bash
 node -v
 ```
 
 ### **Initialize a React Project**
 
 1. **Initialize a new React app**:
-   ```
+   ```bash
    npx create-react-app <YOUR_APP_NAME>
    cd <YOUR_APP_NAME>
    ```
@@ -110,27 +110,27 @@ node -v
 #### **Step 1: Initialize Git and Add a README**
 
 1. **Initialize Git in your project folder**:
-   ```
+   ```bash
    git init
    ```
 
 2. **Create a README file and add some content**:
-   ```
+   ```bash
    echo "# <YOUR_REPO_NAME>" >> README.md
    ```
 
 3. **Add the README file to Git**:
-   ```
+   ```bash
    git add README.md
    ```
 
 4. **Commit your changes**:
-   ```
+   ```bash
    git commit -m "Initial commit"
    ```
 
 5. **Set the default branch to `main`**:
-   ```
+   ```bash
    git branch -M main
    ```
 
@@ -143,17 +143,17 @@ node -v
 > 2. Generate a new token and select the necessary scopes (`repo` for full control of repositories).
 > 3. Copy the token (you won’t be able to see it again).
 > 4. Use Git's credential helper to securely store your token:
->    ```
+>    ```bash
 >    git config --global credential.helper cache
 >    ```
 
 1. **Add a remote repository using your PAT**:
-   ```
+   ```bash
    git remote add origin https://<YOUR_USERNAME>:<YOUR_PERSONAL_ACCESS_TOKEN>@github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
    ```
 
 2. **Push the code to GitHub**:
-   ```
+   ```bash
    git push -u origin main
    ```
 
@@ -162,7 +162,7 @@ node -v
 ## **Step 4: Launch Your React App Locally for Testing**
 
 1. **Start the React development server**:
-   ```
+   ```bash
    npm start
    ```
 
@@ -170,7 +170,7 @@ node -v
 
 > **Troubleshooting**:  
 If port 3000 is already in use, React will prompt you to use a different port. You can free up the port by running:
-```
+```bash
 npx kill-port 3000
 ```
 
@@ -183,7 +183,7 @@ Firebase offers services like hosting, authentication, and Firestore (a NoSQL da
 ### **Step 1: Install Firebase**
 
 1. **Install Firebase in your React project**:
-   ```
+   ```bash
    npm install firebase
    ```
 
@@ -200,13 +200,13 @@ Firebase offers services like hosting, authentication, and Firestore (a NoSQL da
 ### **Step 3: Configure Firebase in Your Project**
 
 1. **Create a `firebase.js` file** in the `src` directory:
-   ```
+   ```bash
    touch src/firebase.js
    ```
 
 2. **Paste the Firebase configuration into `firebase.js`**:
 
-   ```
+   ```javascript
    import { initializeApp } from 'firebase/app';
    import { getFirestore } from 'firebase/firestore';
    import { getAuth } from 'firebase/auth';
@@ -232,7 +232,7 @@ Firebase offers services like hosting, authentication, and Firestore (a NoSQL da
 Environment variables are key-value pairs used to configure your app for different environments (local development, production). They help keep sensitive information, like API keys, safe and separate from your codebase. Firebase requires you to provide credentials for services like authentication and databases. By storing these values in environment variables, you avoid hardcoding sensitive data into your code.
 
 > **Best Practice**: For security, store sensitive configuration data in environment variables using a `.env` file:
-```
+```bash
 REACT_APP_FIREBASE_API_KEY="your-api-key"
 REACT_APP_FIREBASE_AUTH_DOMAIN="your-auth-domain"
 REACT_APP_FIREBASE_PROJECT_ID="your-project-id"
@@ -247,19 +247,19 @@ REACT_APP_FIREBASE_PROJECT_ID="your-project-id"
 1
 
 . **Install the Firebase CLI globally**:
-   ```
+   ```bash
    npm install -g firebase-tools
    ```
 
 2. **Log in to Firebase**:
-   ```
+   ```bash
    firebase login
    ```
 
 ### **Step 2: Initialize Firebase in Your Project**
 
 1. **Run the initialization command**:
-   ```
+   ```bash
    firebase init
    ```
 
@@ -278,19 +278,19 @@ REACT_APP_FIREBASE_PROJECT_ID="your-project-id"
 ### **Step 3: Build and Deploy Your App**
 
 1. **Build your React app for production**:
-   ```
+   ```bash
    npm run build
    ```
 
 2. **Deploy your app to Firebase**:
-   ```
+   ```bash
    firebase deploy
    ```
 
 > **Common Issues During Deployment**:
 1. **Build folder missing**: Ensure that you've run `npm run build` before deploying.
 2. **Authentication Errors**: If you see authentication errors during deployment, confirm you're logged in by running:
-   ```
+   ```bash
    firebase login
    ```
 
@@ -312,7 +312,7 @@ After deploying, Firebase will provide a live URL for your app. Open this URL in
 
 2. **Use Firestore**:
    - Implement real-time database functionality with Firestore. Learn how to create, read, update, and delete documents in [Firestore Docs](https://firebase.google.com/docs/firestore).
-   ```
+   ```javascript
    import { collection, addDoc } from 'firebase/firestore';
 
    async function addUser(db) {
