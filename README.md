@@ -345,7 +345,7 @@ By following this guide, you've deployed a live web application. Next, consider 
 ---
 
 ### **Additional Resources**
-- [React Documentation]([https://reactjs.org/docs/getting-started.html](https://react.dev/))
+- [React Documentation](https://react.dev/)
 - [Firebase Hosting Documentation](https://firebase.google.com/docs/hosting)
 - [GitHub Actions for Firebase](https://firebase.google.com/docs/hosting/github-integration)
 
